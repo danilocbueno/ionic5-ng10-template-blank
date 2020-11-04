@@ -13,23 +13,35 @@
     </ion-toolbar>
   </ion-header>
 
+  Teste form
+
   <form (ngSubmit)="salvar()">
-
-
     <ion-item>
       <ion-label>Nome</ion-label>
-      <ion-input type="text" [(ngModel)]="cliente.nome" name="cliente.nome"></ion-input>
+      <ion-input
+        type="text"
+        [(ngModel)]="cliente.nome"
+        name="cliente.nome"
+      ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Email</ion-label>
-      <ion-input type="email" [(ngModel)]="cliente.email" name="cliente.email"></ion-input>
+      <ion-input
+        type="email"
+        [(ngModel)]="cliente.email"
+        name="cliente.email"
+      ></ion-input>
     </ion-item>
 
-
-    <ion-button type="submit" shape="round" color="primary" expand="block" padding>
+    <ion-button
+      type="submit"
+      shape="round"
+      color="primary"
+      expand="block"
+      padding
+    >
       Confirmar
     </ion-button>
   </form>
-
 </ion-content>
