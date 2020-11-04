@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,26 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  private cliente = {};
+  private cliente = {
+    nome: "",
+    email: ""
+  };
 
-  constructor() {}
+  constructor(private alertController: AlertController) {}
 
-  salvar() {
+  async salvar() {
     console.log(this.cliente);
+
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Teste Modal',
+      subHeader: 'Meu super Modal',
+      message: `O nome informado foi de ${this.cliente.nome}. E o email: ${this.cliente.email}`,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
   }
 
 }
